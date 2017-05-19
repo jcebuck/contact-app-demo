@@ -36,3 +36,7 @@ textarea {
     color: initial;
     text-decoration: none;
 }
+
+.row {
+    margin-top: 10px;
+}

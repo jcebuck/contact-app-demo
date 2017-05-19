@@ -11,17 +11,27 @@
 }
 else
 {
-    <div class="row" ng-controller="mainController as ctrl" ng-cloak>
-        <div class="col-md-4 contacts-list" ng-repeat="contact in ctrl.allContacts track by $index">
-            <a href="@Url.Action("Index", "Map")">
-                <md-list-item class="md-2-line contact-item">
-                    <img ng-src="{{contact.Avatar}}" class="md-avatar" alt="{{contact.Email}}" />
-                    <div class="md-list-item-text compact">
-                        <h3>{{contact.FirstName + " " + contact.Surname}}</h3>
-                        <p>{{contact.Email}}</p>
-                    </div>
-                </md-list-item>
-            </a>
+    <div ng-controller="mainController as ctrl" ng-cloak>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-inline">
+                    <label>Search:</label>
+                    <input type="text" class="form-control" ng-model="ctrl.searchText" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 contacts-list" ng-repeat="contact in ctrl.allContacts | filter:ctrl.searchText track by $index">
+                <a href="@Url.Action("Index", "Map")">
+                    <md-list-item class="md-2-line contact-item">
+                        <img ng-src="{{contact.Avatar}}" class="md-avatar" alt="{{contact.Email}}" />
+                        <div class="md-list-item-text compact">
+                            <h3>{{contact.FirstName + " " + contact.Surname}}</h3>
+                            <p>{{contact.Email}}</p>
+                        </div>
+                    </md-list-item>
+                </a>
+            </div>
         </div>
     </div>
 
