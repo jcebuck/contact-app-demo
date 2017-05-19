@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Contacts>
+  <Contact>
+    <FirstName>Irene</FirstName>
+    <Surname>Hatfield</Surname>
+    <Email>i.hatfield@example.com</Email>
+    <Postcode>PH40 5FW</Postcode>
+  </Contact>
+  <Contact>
+    <FirstName>Demi</FirstName>
+    <Surname>Gardner</Surname>
+    <Email>d.gardner@example.com</Email>
+    <Postcode>S64 1EP</Postcode>
+  </Contact>
+  <Contact>
+    <FirstName>Freddie</FirstName>
+    <Surname>Bryan</Surname>
+    <Email>f.bryan@example.com</Email>
+    <Postcode>IV18 0SL</Postcode>
+  </Contact>
+  <Contact>
+    <FirstName>Reece</FirstName>
+    <Surname>Metcalfe</Surname>
+    <Email>f.bryan@example.com</Email>
+    <Postcode>S62 9HJ</Postcode>
+  </Contact>
+</Contacts>
