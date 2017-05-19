@@ -1,4 +1,13 @@
-﻿body {
+﻿button,
+select,
+html,
+textarea,
+body,
+input {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
