@@ -3,6 +3,7 @@
 
     angular.module('app', []).controller('mainController', ['$scope', '$http', function ($scope, $http) {
         var ctrl = this;
+        ctrl.orderByReverse = 'false';
         loadContacts();
 
         function loadContacts() {
@@ -10,6 +11,10 @@
                 ctrl.allContacts = response.data;
             });
         }
+
+        ctrl.orderByReverseGet = function () {
+            return ctrl.orderByReverse === 'true';
+        };
     }]);
 
 })();
