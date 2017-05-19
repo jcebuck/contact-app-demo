@@ -10,7 +10,7 @@ namespace ContactApplication.Controllers
     public class MapController : Controller
     {
         // GET: Map
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             return View();
         }

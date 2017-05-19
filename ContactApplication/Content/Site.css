@@ -31,3 +31,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.contacts-list a {
+    color: initial;
+    text-decoration: none;
+}
