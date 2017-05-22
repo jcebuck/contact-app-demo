@@ -1,4 +1,53 @@
-﻿@{
+﻿@using ContactApplication.Models
+@model ContactViewModel
+
+@{
     ViewBag.Title = "Contact Map";
 }
 
+@if (Model == null)
+{
+    <p>Contact email could not be found.</p>
+    return;
+}
+
+<h2>@Model.Email</h2>
+
+<div id="map"></div>
+
+@section scripts {
+    <script>
+        function initMap() {
+            var uluru = { lat: 53.1691888, lng: -2.2027878999999757 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 5,
+                center: uluru
+            });
+
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': '@Model.Postcode' }, function (results, status) {
+                if (status == 'OK') {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location,
+                        icon: '@Html.Raw(Model.Avatar)&s=25'
+                    });
+
+                    var infowindow = new google.maps.InfoWindow({
+                        content: '<h3>@Model.FirstName @Model.Surname</h3><p>@Model.Postcode</p>'
+                    });
+                    marker.addListener("mouseover", function () {
+                        infowindow.open(map, marker);
+                    });
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        }
+    </script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=@(ViewBag.gMapsApiKey)&callback=initMap">
+    </script>
+}

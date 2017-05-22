@@ -40,3 +40,8 @@ textarea {
 .row {
     margin-top: 10px;
 }
+
+#map {
+    height: 400px;
+    width: 100%;
+}

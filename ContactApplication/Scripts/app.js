@@ -1,7 +1,13 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('app', []).controller('mainController', ['$scope', '$http', function ($scope, $http) {
+    var app = angular.module('app', []);
+
+    app.filter('escape', function () {
+        return window.encodeURIComponent;
+    });
+    
+    app.controller('mainController', ['$scope', '$http', function ($scope, $http) {
         var ctrl = this;
         ctrl.orderByReverse = 'false';
         loadContacts();

@@ -37,7 +37,7 @@ else
         </div>
         <div class="row">
             <div class="col-md-4 contacts-list" ng-repeat="contact in ctrl.allContacts | filter:ctrl.searchText | orderBy:ctrl.orderBy:ctrl.orderByReverseGet() track by $index">
-                <a href="@Url.Action("Index", "Map")">
+                <a href="@Url.Action("Index", "Map")?email={{contact.Email | escape}}">
                     <md-list-item class="md-2-line contact-item">
                         <img ng-src="{{contact.Avatar}}" class="md-avatar" alt="{{contact.Email}}" />
                         <div class="md-list-item-text compact">

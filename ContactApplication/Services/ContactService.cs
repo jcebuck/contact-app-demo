@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 
@@ -31,6 +32,11 @@ namespace ContactApplication.Services
 
                 return contacts.Contacts;
             }
+        }
+
+        public ContactViewModel GetContactByEmail(string email)
+        {
+            return GetAllContacts().FirstOrDefault(c => c.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
         }
     }
 }
